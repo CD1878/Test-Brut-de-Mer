@@ -4,16 +4,16 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-soft-gray min-h-screen pt-20 pb-20">
       <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-12 shadow-sm border border-gray-100">
-        
+
         <div className="space-y-8">
-           <h1 className="text-3xl font-serif text-marine-blue tracking-widest uppercase">Contact</h1>
-           <div className="space-y-4 font-serif text-gray-700">
-             <p><strong>BRUT DE MER</strong></p>
-             <p>Gerard Douplein 8H</p>
-             <p>1072 VE Amsterdam</p>
-             <p className="pt-4"><a href="tel:0204714099" className="hover:text-marine-blue transition-colors">020 – 471 40 99</a></p>
-             <p><a href="mailto:info@brutdemer.nl" className="hover:text-marine-blue transition-colors">info@brutdemer.nl</a></p>
-           </div>
+          <h1 className="text-3xl font-serif text-marine-blue tracking-widest uppercase">Contact</h1>
+          <div className="space-y-4 font-serif text-gray-700">
+            <p><strong>BRUT DE MER</strong></p>
+            <p>Gerard Douplein 8H</p>
+            <p>1072 VE Amsterdam</p>
+            <p className="pt-4"><a href="tel:0204714099" className="hover:text-marine-blue transition-colors">020 – 471 40 99</a></p>
+            <p><a href="mailto:info@brutdemer.nl" className="hover:text-marine-blue transition-colors">info@brutdemer.nl</a></p>
+          </div>
         </div>
 
         <div className="space-y-8">
@@ -30,10 +30,34 @@ export const Contact: React.FC = () => {
         </div>
 
       </div>
-      
-      {/* Map Placeholder */}
-      <div className="max-w-4xl mx-auto mt-12 h-64 bg-gray-200 flex items-center justify-center border border-gray-300">
-        <span className="font-serif text-gray-500 italic">Kaart laden...</span>
+
+      {/* Map Section */}
+      <div className="max-w-4xl mx-auto mt-12 bg-white shadow-sm border border-gray-100 overflow-hidden group">
+        <div className="relative h-[400px] w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d2436.561578643869!2d4.891152!3d52.35634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609ec254877dd%3A0x7d6b38c368d9047b!2sBrut%20de%20Mer!5e0!3m2!1snl!2snl!4v1700000000000!5m2!1snl!2snl"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Brut de Mer Locatie"
+          ></iframe>
+
+          {/* Directions Bridge Over Map */}
+          <div className="absolute bottom-6 left-6 right-6 md:right-auto">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Brut+de+Mer+Gerard+Douplein+8H+Amsterdam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-marine-blue text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-marine-blue transition-all duration-300 shadow-xl border border-marine-blue"
+            >
+              <span>Route naar Brut de Mer</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6" /><path d="M10 14L21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
