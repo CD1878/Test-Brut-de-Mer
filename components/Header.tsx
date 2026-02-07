@@ -7,6 +7,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Over Ons', path: '/over-ons' },
   { label: 'Menu', path: '/menu' },
+  { label: 'Events', path: '/events' },
   { label: 'Contact', path: '/contact' },
 ];
 
