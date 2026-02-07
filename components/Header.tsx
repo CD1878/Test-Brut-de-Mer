@@ -13,30 +13,34 @@ export const Header: React.FC = () => {
   return (
     <header className="w-full bg-white border-b border-gray-100 flex flex-col items-center pt-8 pb-0">
       <NavLink to="/" className="text-center mb-6 group cursor-pointer block">
-        <h1 className="text-3xl md:text-4xl font-serif tracking-widest text-marine-blue mb-1 group-hover:opacity-80 transition-opacity">
-          BRUT DE MER
-        </h1>
-        <p className="text-xs uppercase tracking-[0.3em] text-gray-500 font-sans">
-          Oysters | Fish | Bubbles
-        </p>
+        <img
+          src="https://brutdemer.nl/wp-content/uploads/2022/04/logo_high_res_KLEINER.png"
+          alt="Brut de Mer"
+          className="h-16 md:h-20 mx-auto group-hover:opacity-80 transition-opacity"
+        />
       </NavLink>
 
       {/* Navigation Bar */}
-      <nav className="w-full border-t border-gray-200">
-        <ul className="flex justify-center w-full max-w-5xl mx-auto">
+      <nav className="w-full">
+        <ul className="flex flex-col md:flex-row w-full max-w-full mx-auto">
           {NAV_ITEMS.map((item, index) => (
-            <li key={item.path} className={`flex-1 text-center ${index !== NAV_ITEMS.length - 1 ? 'border-r border-gray-200' : ''}`}>
+            <li
+              key={item.path}
+              className={`flex-1 border-y md:border-y-0 md:border-l border-black first:md:border-l-0 bg-[#fcfdfb] transition-colors duration-300`}
+            >
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `block py-4 px-2 text-xs md:text-sm uppercase tracking-widest font-sans transition-colors duration-300
-                  ${isActive ? 'bg-marine-blue text-white' : 'text-gray-600 hover:text-marine-blue hover:bg-gray-50'}`
+                  `block py-5 px-2 text-[13px] uppercase tracking-[0.2em] font-bold transition-all duration-300 text-center
+                  ${isActive ? 'bg-marine-blue text-white' : 'text-gray-900 hover:bg-marine-blue hover:text-white'}`
                 }
               >
                 {item.label}
               </NavLink>
             </li>
           ))}
+          {/* Add an extra border to the right of the last item to close the grid if needed */}
+          <div className="hidden md:block border-l border-black"></div>
         </ul>
       </nav>
     </header>

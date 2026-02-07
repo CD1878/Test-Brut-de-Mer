@@ -35,7 +35,7 @@ export const Contact: React.FC = () => {
       <div className="max-w-4xl mx-auto mt-12 bg-white shadow-sm border border-gray-100 overflow-hidden group">
         <div className="relative h-[400px] w-full">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d2436.561578643869!2d4.891152!3d52.35634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609ec254877dd%3A0x7d6b38c368d9047b!2sBrut%20de%20Mer!5e0!3m2!1snl!2snl!4v1700000000000!5m2!1snl!2snl"
+            src="https://maps.google.com/maps?width=650&height=400&hl=en&q=brut%20de%20mer%20amsterdam&t=&z=14&ie=UTF8&iwloc=B&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}

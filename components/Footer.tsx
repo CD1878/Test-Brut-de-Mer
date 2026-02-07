@@ -1,11 +1,11 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Facebook, Award } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-marine-blue text-white pt-16 pb-12 mt-auto relative">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-        
+
         {/* Contact Column */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h3 className="font-serif text-lg tracking-widest uppercase mb-2">Contact</h3>
@@ -13,11 +13,17 @@ export const Footer: React.FC = () => {
             <p>Brut de Mer</p>
             <p>Gerard Douplein 8H</p>
             <p>1072 VE Amsterdam</p>
-            <p className="mt-2">020 – 471 40 99</p>
+            <p className="mt-2"><a href="tel:0204714099" className="hover:text-white transition-colors">020 – 471 40 99</a></p>
           </div>
-          <div className="pt-4">
-            <a href="#" className="text-white hover:text-gray-300 transition-colors">
+          <div className="pt-4 flex gap-6">
+            <a href="https://www.instagram.com/brut_de_mer/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
               <Instagram size={20} strokeWidth={1.5} />
+            </a>
+            <a href="https://www.facebook.com/Brut-de-Mer-1547834715464434/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+              <Facebook size={20} strokeWidth={1.5} />
+            </a>
+            <a href="https://www.tripadvisor.nl/Restaurant_Review-g188590-d8538295-Reviews-Brut_de_Mer-Amsterdam_North_Holland_Province.html" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+              <Award size={20} strokeWidth={1.5} />
             </a>
           </div>
         </div>
@@ -39,32 +45,22 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Instagram Column */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
+        {/* Brand Column */}
+        <div className="flex flex-col items-center md:items-start space-y-6">
           <h3 className="font-serif text-lg tracking-widest uppercase mb-2">Instagram</h3>
           <p className="font-sans text-sm font-light text-gray-300">
-            Volg ons voor de laatste updates, specials en sfeerimpressies.
+            Deel uw momenten met #brutdemer en beleef de sfeer van de Cote d'Azur in de Pijp.
           </p>
-          <a href="#" className="text-xs uppercase tracking-widest border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors">
-            @BRUTDEMER
+          <a href="https://www.instagram.com/brut_de_mer/" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors">
+            @BRUT_DE_MER
           </a>
         </div>
       </div>
 
-      {/* Fixed Reservation Button */}
-      <div className="fixed bottom-0 right-0 z-50 p-6 md:p-8">
-        <a 
-          href="#contact" 
-          className="bg-marine-blue text-white font-serif text-xs uppercase tracking-widest py-3 px-6 shadow-none hover:bg-white hover:text-marine-blue border border-white transition-colors duration-300"
-        >
-          Reserveren
-        </a>
-      </div>
-      
       {/* Copyright */}
-      <div className="border-t border-gray-800 mt-12 pt-6 text-center">
-        <p className="text-xs text-gray-500 font-sans tracking-wider">
-          &copy; {new Date().getFullYear()} BRUT DE MER. ALL RIGHTS RESERVED.
+      <div className="border-t border-gray-800 mt-16 pt-8 text-center">
+        <p className="text-[10px] text-gray-500 font-sans tracking-[0.2em] uppercase">
+          &copy; {new Date().getFullYear()} BRUT DE MER AMSTERDAM. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>

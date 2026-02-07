@@ -2,54 +2,62 @@ import React from 'react';
 
 export const About: React.FC = () => {
   return (
-    <div className="bg-cream">
+    <div className="bg-cream animate-fade-in">
       {/* Hero */}
-      <div className="relative w-full h-[60vh]">
+      <div className="relative w-full h-[70vh] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1553659971-f01207815844?auto=format&fit=crop&q=80&w=1920"
-          alt="About Brut de Mer"
-          className="w-full h-full object-cover grayscale-[30%]"
+          src="https://brutdemer.nl/wp-content/uploads/2022/03/brut-de-mer-terras-over-ons-header.jpg"
+          alt="Brut de Mer Terras"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-marine-blue bg-opacity-20 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl text-white font-serif tracking-widest uppercase shadow-sm">Over Ons</h1>
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-7xl text-white font-serif tracking-[0.2em] uppercase drop-shadow-2xl">Over Ons</h1>
+            <div className="w-16 h-px bg-white mx-auto mt-6 opacity-60"></div>
+          </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-24 space-y-24">
+      <div className="max-w-6xl mx-auto px-6 py-24 space-y-32">
 
-        {/* Intro */}
-        <div className="text-center space-y-6">
-          <h2 className="text-2xl font-serif text-marine-blue uppercase tracking-widest">Sinds 2016</h2>
-          <div className="w-12 h-px bg-marine-blue mx-auto"></div>
-          <p className="font-serif text-gray-700 leading-loose text-lg">
-            Gelegen aan het gezellige Gerard Douplein in de Amsterdamse Pijp. Brut de Mer is geboren uit liefde voor de Franse kust, verse zeevruchten en goede wijnen.
-          </p>
-        </div>
-
-        {/* Text Image Split 1 */}
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-full md:w-1/2">
-            <p className="font-serif text-gray-700 leading-loose text-sm md:text-base mb-4">
-              <strong>DE SFEER</strong><br /><br />
-              Wanneer je bij ons binnenstapt, voel je direct de ontspannen, maritieme sfeer. Geen stijve bediening, maar vakkennis met een glimlach. Het interieur ademt de klasse van een Parijse bistro, gecombineerd met de nuchterheid van Amsterdam. Marmeren bladen, donker hout en het geluid van klinkende glazen.
+        {/* BRUT DE MER Section */}
+        <div className="flex flex-col md:flex-row gap-16 items-center">
+          <div className="w-full md:w-1/2 shadow-2xl overflow-hidden group">
+            <img
+              src="https://brutdemer.nl/wp-content/uploads/2022/03/contact-page-1.jpg"
+              alt="Brut de Mer Sfeer"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            />
+          </div>
+          <div className="w-full md:w-1/2 space-y-8">
+            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">BRUT DE MER</h2>
+            <p className="font-serif text-gray-700 leading-relaxed text-lg italic">
+              Brut de Mer brengt de Cote d’ Azur naar het gezellige Gerard Douplein in Amsterdam. Wij zijn een dynamische Oester – Vis – Wijn – Bar waar altijd een heerlijke bruisende sfeer heerst.
+            </p>
+            <p className="font-serif text-gray-600 leading-loose text-base">
+              Kakelverse oesters die dagelijks en direct vanuit de Zeeuwse oester putten geleverd worden. Brut heeft een groot assortiment oesters uit diverse streken waarbij we rekening houden met de verschillende seizoenen en herkomst. De oesters worden op professionele wijze geopend door onze getrainde oestermannen. Zij kunnen u over iedere oester informeren en hierbij een passende wijn adviseren.
             </p>
           </div>
-          <div className="w-full md:w-1/2 aspect-square">
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800" alt="Interior" className="w-full h-full object-cover" />
-          </div>
         </div>
 
-        {/* Text Image Split 2 */}
-        <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
-          <div className="w-full md:w-1/2">
-            <p className="font-serif text-gray-700 leading-loose text-sm md:text-base mb-4">
-              <strong>WIE ZIJN WIJ</strong><br /><br />
-              Wij zijn ambachtslieden. Onze 'écailleurs' openen oesters met precisie. Onze chefs werken uitsluitend met dagverse producten. Wij geloven niet in hypes of ingewikkelde concepten. Wij geloven in kwaliteit. In een goed glas wijn. En in de tijd nemen om daarvan te genieten.
-            </p>
+        {/* WIE ZIJN WIJ Section */}
+        <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
+          <div className="w-full md:w-1/2 shadow-2xl overflow-hidden group">
+            <img
+              src="https://brutdemer.nl/wp-content/uploads/2022/03/contact-page-2.jpg"
+              alt="Wie zijn wij"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            />
           </div>
-          <div className="w-full md:w-1/2 aspect-square">
-            <img src="https://images.unsplash.com/photo-1551218808-94e220e031a5?auto=format&fit=crop&q=80&w=800" alt="Chef" className="w-full h-full object-cover" />
+          <div className="w-full md:w-1/2 space-y-8">
+            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">WIE ZIJN WIJ</h2>
+            <p className="font-serif text-gray-700 leading-relaxed text-lg italic">
+              In april 2015 opende Brut de Mer aan het Gerard Douplein in de Amsterdamse Pijp. Brut de Mer is van vijf vrienden, wij hebben allen ons eigen specialisme waardoor er een goede/sterke synergie ontstaat binnen Brut.
+            </p>
+            <p className="font-serif text-gray-600 leading-loose text-base">
+              Voor de een zijn we een oesterbar, voor de ander een visbar of restaurant. Iedereen beleeft Brut de Mer op zijn manier. Met de wijze hoe wij de klant bedienen, onze robuuste uitstraling en fantastische gerechten heeft Brut de Mer vis opnieuw op de kaart gezet. Wij zijn niet traditioneel en zeker niet stijf, met creatieve gerechten, met de beste ingrediënten en enthousiast personeel hebben we een bijzonder mooi en gezellig concept!
+            </p>
           </div>
         </div>
 

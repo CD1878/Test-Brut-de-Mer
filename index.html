@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brut de Mer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,12 +16,26 @@
               'soft-gray': '#F5F5F5',
             },
             fontFamily: {
-              serif: ['"Times New Roman"', 'Times', 'serif'],
-              sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+              serif: ['"Libre Baskerville"', 'serif'],
+              sans: ['Roboto', 'sans-serif'],
             },
             letterSpacing: {
               widest: '.2em',
-            }
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
           },
         },
       }

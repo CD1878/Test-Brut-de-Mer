@@ -1,152 +1,70 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../components/Button';
 
-interface MenuItem {
-  name: string;
-  description: string;
-  price?: string;
-}
-
-interface MenuSection {
-  title: string;
-  items: MenuItem[];
-}
-
 export const Menu: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-
-  const snacksMenu: MenuSection[] = [
-    {
-      title: "Amuse Bouche + Glass of Salentein",
-      items: [
-        { name: "Sparkling Pinot Noir, Chardonnay", description: "Or Cocottes Sparkling Chardonnay 0%" }
-      ]
-    },
-    {
-      title: "Starters",
-      items: [
-        { name: "Tide Meets Grove", description: "Langoustine - Chestnut - Nettle + Caviar", price: "€10" },
-        { name: "Evening Among The Brumble", description: "Foie gras - Aromatic herbs - Duck broth" }
-      ]
-    },
-    {
-      title: "Mains",
-      items: [
-        { name: "Roots Beneath The Tide", description: "Red porgy - Salsify - Black trumpet mushrooms" },
-        { name: "Nest In Clearing", description: "Quail - Wild spinach - Cereals" }
-      ]
-    },
-    {
-      title: "Desserts",
-      items: [
-        { name: "The First Snow", description: "Coconut - Passionfruit - Milk" },
-        { name: "Nightfall In The Forest", description: "Chocolate - Black garlic - Buckwheat" }
-      ]
-    }
+  const menuCategories = [
+    { name: "Snacks", link: "https://brutdemer.nl/wp-content/uploads/2025/11/content___com.whatsapp.provider-4.pdf" },
+    { name: "Diner", link: "https://brutdemer.nl/wp-content/uploads/2025/11/content___com.whatsapp.provider_1.pdf" },
+    { name: "Wijnen", link: "https://brutdemer.nl/wp-content/uploads/2025/11/content___com.whatsapp.provider-6.pdf" },
+    { name: "Kerstmenu", link: "https://brutdemer.nl/?ft-ticket=2523f225" }
   ];
 
-  const renderActiveMenu = () => {
-    if (activeMenu === 'Snacks') {
-      return (
-        <div className="w-full mt-12 animate-fade-in bg-white p-8 md:p-16 shadow-2xl rounded-sm text-center space-y-12">
-          <button
-            onClick={() => setActiveMenu(null)}
-            className="absolute top-4 right-4 text-marine-blue hover:opacity-50 transition-opacity"
-          >
-            ✕
-          </button>
-
-          <div className="space-y-4">
-            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest">Valentine's Menu</h2>
-            <div className="w-12 h-px bg-marine-blue mx-auto opacity-30"></div>
-          </div>
-
-          <div className="space-y-16">
-            {snacksMenu.map((section, idx) => (
-              <div key={idx} className="space-y-8">
-                <h3 className="text-xl font-serif text-[#8B8B4B] uppercase tracking-[0.2em]">{section.title}</h3>
-                <div className="space-y-6">
-                  {section.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="space-y-2">
-                      <div className="flex flex-col items-center">
-                        <span className="text-lg md:text-xl font-serif text-[#C4673B] tracking-wide">{item.name}</span>
-                        <span className="text-sm font-sans text-[#C4673B] opacity-80 italic">{item.description} {item.price && <span className="font-bold underline ml-1">{item.price}</span>}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {idx < snacksMenu.length - 1 && <div className="w-8 h-px bg-[#C4673B] mx-auto opacity-40"></div>}
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-12 border-t border-cream space-y-2 text-[#C4673B] font-sans">
-            <p className="font-serif text-xl">Valentine's menu €110</p>
-            <p className="text-sm opacity-80 italic">Wine pairing per glass is €10</p>
-            <p className="text-sm opacity-80 italic">Half glass is €7</p>
-          </div>
-
-          <Button variant="outline" onClick={() => setActiveMenu(null)} className="mt-8">Terug naar overzicht</Button>
-        </div>
-      );
-    }
-    return null;
-  };
-
   return (
-    <div className="py-20 px-6 bg-cream min-h-screen relative">
-      <div className="max-w-3xl mx-auto flex flex-col items-center">
+    <div className="py-24 px-6 bg-cream min-h-screen">
+      <div className="max-w-4xl mx-auto flex flex-col items-center">
 
         {/* Header */}
-        {!activeMenu && (
-          <div className="text-center mb-16 space-y-4 animate-fade-in">
-            <div className="text-marine-blue font-serif text-3xl tracking-widest uppercase">
-              Menu
-            </div>
-            <div className="w-12 h-px bg-marine-blue mx-auto"></div>
-            <p className="text-gray-500 font-serif italic">
-              Ontdek onze smaken
-            </p>
-          </div>
-        )}
+        <div className="text-center mb-20 space-y-6 animate-fade-in">
+          <h1 className="text-marine-blue font-serif text-5xl md:text-6xl tracking-[0.2em] uppercase">
+            Menu
+          </h1>
+          <div className="w-16 h-px bg-marine-blue mx-auto opacity-40"></div>
+          <p className="text-gray-600 font-serif italic text-lg">
+            Ontdek onze dagverse smaken en geselecteerde wijnen
+          </p>
+        </div>
 
-        {/* Buttons Container */}
-        {!activeMenu ? (
-          <div className="w-full space-y-8 animate-fade-in">
-            {/* Dutch Section */}
-            <div className="space-y-4 w-full">
-              <h3 className="text-center text-xs uppercase tracking-widest text-gray-400 mb-4 font-sans">Nederlands</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Button fullWidth onClick={() => setActiveMenu('Snacks')}>Snacks</Button>
-                <Button fullWidth>Diner</Button>
-                <Button fullWidth>Wijnen</Button>
-                <Button fullWidth>Kerstmenu</Button>
+        {/* Menu Grid */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-up">
+          {menuCategories.map((cat, idx) => (
+            <a
+              key={idx}
+              href={cat.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+            >
+              <div className="border border-marine-blue/20 p-12 text-center hover:bg-marine-blue hover:text-white transition-all duration-500 bg-white/50 backdrop-blur-sm relative overflow-hidden">
+                <div className="absolute inset-0 border border-marine-blue/5 m-2 pointer-events-none"></div>
+                <h3 className="text-2xl font-serif uppercase tracking-[0.3em] group-hover:tracking-[0.4em] transition-all duration-500">
+                  {cat.name}
+                </h3>
+                <div className="mt-4 text-xs uppercase tracking-widest opacity-0 group-hover:opacity-60 transition-opacity duration-500">
+                  Bekijk Menu
+                </div>
               </div>
-            </div>
+            </a>
+          ))}
+        </div>
 
-            <div className="w-full h-px bg-gray-200 my-12"></div>
-
-            {/* English Section */}
-            <div className="space-y-4 w-full">
-              <h3 className="text-center text-xs uppercase tracking-widest text-gray-400 mb-4 font-sans">English</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Button fullWidth onClick={() => setActiveMenu('Snacks')}>Snacks (EN)</Button>
-                <Button fullWidth>Dinner (EN)</Button>
-                <Button fullWidth>Wines (EN)</Button>
-                <Button fullWidth>Christmas Menu (EN)</Button>
-              </div>
-            </div>
-
-            {/* Allergy Warning */}
-            <div className="mt-20 text-center">
-              <p className="font-serif text-sm text-gray-600 italic">
-                Heeft u een allergie? Vraag de bediening om advies!
-              </p>
-            </div>
+        {/* Decorative Quote */}
+        <div className="mt-32 text-center max-w-2xl px-6 opacity-60">
+          <p className="font-serif italic text-xl text-marine-blue">
+            "Savor the ocean's finest offerings, paired with the perfect bubbles."
+          </p>
+          <div className="mt-6 flex justify-center gap-4">
+            <span className="w-1 h-1 bg-marine-blue rounded-full"></span>
+            <span className="w-1 h-1 bg-marine-blue rounded-full"></span>
+            <span className="w-1 h-1 bg-marine-blue rounded-full"></span>
           </div>
-        ) : (
-          renderActiveMenu()
-        )}
+        </div>
+
+        {/* Allergy Warning */}
+        <div className="mt-24 py-8 border-t border-marine-blue/10 w-full text-center">
+          <p className="font-serif text-sm text-gray-400 italic">
+            Heeft u een allergie? Laat het ons weten! Wij informeren u graag over onze ingrediënten.
+          </p>
+        </div>
 
       </div>
     </div>
