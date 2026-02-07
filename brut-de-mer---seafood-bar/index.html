@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brut de Mer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#FCFBF8',
+              'marine-blue': '#0F2043',
+              'soft-gray': '#F5F5F5',
+            },
+            fontFamily: {
+              serif: ['"Times New Roman"', 'Times', 'serif'],
+              sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+            },
+            letterSpacing: {
+              widest: '.2em',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FCFBF8;
+        color: #111;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Ensure sticky footer behavior */
+      #root {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
