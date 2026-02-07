@@ -1,0 +1,17 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Optional: Smooth transition for hero images */
+.hero-image-enter {
+  opacity: 0;
+}
+.hero-image-enter-active {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}

@@ -12,15 +12,14 @@ const NAV_ITEMS: NavItem[] = [
 export const Header: React.FC = () => {
   return (
     <header className="w-full bg-white border-b border-gray-100 flex flex-col items-center pt-8 pb-0">
-      {/* Logo Section */}
-      <div className="text-center mb-6">
-        <h1 className="text-3xl md:text-4xl font-serif tracking-widest text-marine-blue mb-1">
+      <NavLink to="/" className="text-center mb-6 group cursor-pointer block">
+        <h1 className="text-3xl md:text-4xl font-serif tracking-widest text-marine-blue mb-1 group-hover:opacity-80 transition-opacity">
           BRUT DE MER
         </h1>
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 font-sans">
           Oysters | Fish | Bubbles
         </p>
-      </div>
+      </NavLink>
 
       {/* Navigation Bar */}
       <nav className="w-full border-t border-gray-200">
