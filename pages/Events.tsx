@@ -46,27 +46,28 @@ export const Events: React.FC = () => {
     return (
         <div className="animate-fade-in bg-cream">
             {/* Hero Section */}
-            <div className="relative w-full h-[60vh] bg-black overflow-hidden">
+            <div className="relative w-full h-[65vh] bg-black overflow-hidden">
                 <img
-                    src="https://brutdemer.nl/wp-content/uploads/2022/03/carusel-12.jpg"
-                    alt="Events at Brut de Mer"
-                    className="absolute inset-0 w-full h-full object-cover opacity-60"
+                    src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=2400"
+                    alt="Luxury Seafood Events"
+                    className="absolute inset-0 w-full h-full object-cover opacity-70"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-                    <h1 className="text-5xl md:text-8xl font-serif tracking-[0.2em] text-center drop-shadow-2xl uppercase font-light">
+                    <h1 className="text-5xl md:text-9xl font-serif tracking-[0.3em] text-center drop-shadow-2xl uppercase font-light">
                         Events
                     </h1>
-                    <div className="w-20 h-px bg-white mt-8 opacity-40"></div>
-                    <p className="text-sm uppercase tracking-[0.5em] mt-8 font-light max-w-2xl text-center opacity-80">
+                    <div className="w-24 h-px bg-white mt-10 opacity-50"></div>
+                    <p className="text-xs md:text-sm uppercase tracking-[0.6em] mt-10 font-bold max-w-2xl text-center opacity-90">
                         Bijzondere momenten bij Brut de Mer
                     </p>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="py-24 text-center max-w-4xl mx-auto px-6">
-                <p className="font-serif text-2xl md:text-3xl text-marine-blue italic leading-relaxed">
-                    "Of het nu gaat om een intiem diner of een feestelijke viering, bij Brut de Mer creëren we herinneringen die blijven hangen zoals de smaak van een perfecte oester."
+            <div className="py-32 text-center max-w-4xl mx-auto px-6">
+                <h3 className="text-xs uppercase tracking-[0.6em] text-marine-blue/40 mb-10 font-bold">Unforgettable Experiences</h3>
+                <p className="font-serif text-3xl md:text-5xl text-marine-blue italic leading-snug">
+                    "Bij Brut de Mer creëren we herinneringen die blijven hangen zoals de zilte smaak van een perfecte oester."
                 </p>
             </div>
 
@@ -75,7 +76,7 @@ export const Events: React.FC = () => {
                 subtitle="Zondag 11 Mei"
                 title="Moederdag bij Brut de Mer"
                 text="Verras de belangrijkste vrouw in je leven met een onvergetelijke middag aan het Gerard Douplein. Geniet samen van een speciaal geselecteerd plateau Fruits de Mer, sprankelende bubbels en de meest verfijnde oesters in een ambiance van Franse allure."
-                imageSrc="https://brutdemer.nl/wp-content/uploads/2022/03/carusel-15.jpg"
+                imageSrc="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200"
                 ctaText="Reserveer voor Moederdag"
             />
 
@@ -83,23 +84,23 @@ export const Events: React.FC = () => {
             <EventSection
                 subtitle="Groepen & Partijen"
                 title="Private Moments"
-                text="Onze bar is de perfecte plek voor een BRUTale borrel of een op maat gemaakt event. Van oesterproeverijen voor groepen tot exclusieve diners in het hart van de Pijp."
-                imageSrc="https://brutdemer.nl/wp-content/uploads/2022/03/verplicht-2.jpg"
+                text="Onze bar is de perfecte plek voor een BRUTale borrel of een op maat gemaakt event. Van oesterproeverijen voor groepen tot exclusieve diners in het hart van de Pijp. Wij verzorgen uw event tot in de kleinste details."
+                imageSrc="https://images.unsplash.com/photo-1550966841-3ee7adac1af0?auto=format&fit=crop&q=80&w=1200"
                 ctaText="Vraag een offerte aan"
                 reversed={true}
             />
 
             {/* Footer Visual */}
-            <section className="h-[40vh] relative overflow-hidden">
+            <section className="h-[50vh] relative overflow-hidden">
                 <img
-                    src="https://brutdemer.nl/wp-content/uploads/2022/03/carusel-13.jpg"
+                    src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=2400"
                     className="w-full h-full object-cover"
                     alt="Atmosphere"
                 />
-                <div className="absolute inset-0 bg-marine-blue/30 flex items-center justify-center">
-                    <div className="text-center text-white border border-white/40 p-12 backdrop-blur-md">
-                        <h2 className="text-4xl font-serif mb-4 italic">Vier het leven</h2>
-                        <p className="uppercase tracking-[0.4em] text-xs font-light">@ Gerard Douplein 8H, Amsterdam</p>
+                <div className="absolute inset-0 bg-marine-blue/20 flex items-center justify-center">
+                    <div className="text-center text-white border border-white/40 p-16 backdrop-blur-xl shadow-2xl">
+                        <h2 className="text-5xl font-serif mb-6 italic drop-shadow-lg">Vier het leven</h2>
+                        <p className="uppercase tracking-[0.4em] text-sm font-light drop-shadow-md">Gerard Douplein 8H, Amsterdam</p>
                     </div>
                 </div>
             </section>
