@@ -48,12 +48,12 @@ export const Events: React.FC = () => {
             {/* Hero Section */}
             <div className="relative w-full h-[65vh] bg-black overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=2400"
+                    src="https://brutdemer.nl/wp-content/uploads/2022/04/1920x610_nieuw_header_brut_de_mere.jpg"
                     alt="Luxury Seafood Events"
                     className="absolute inset-0 w-full h-full object-cover opacity-70"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-                    <h1 className="text-5xl md:text-9xl font-serif tracking-[0.3em] text-center drop-shadow-2xl uppercase font-light">
+                    <h1 className="text-5xl md:text-[140px] font-serif tracking-[3px] text-center drop-shadow-2xl uppercase font-light">
                         Events
                     </h1>
                     <div className="w-24 h-px bg-white mt-10 opacity-50"></div>
@@ -76,7 +76,7 @@ export const Events: React.FC = () => {
                 subtitle="Zondag 11 Mei"
                 title="Moederdag bij Brut de Mer"
                 text="Verras de belangrijkste vrouw in je leven met een onvergetelijke middag aan het Gerard Douplein. Geniet samen van een speciaal geselecteerd plateau Fruits de Mer, sprankelende bubbels en de meest verfijnde oesters in een ambiance van Franse allure."
-                imageSrc="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200"
+                imageSrc="https://brutdemer.nl/wp-content/uploads/2022/03/carusel-15.jpg"
                 ctaText="Reserveer voor Moederdag"
             />
 
@@ -85,7 +85,7 @@ export const Events: React.FC = () => {
                 subtitle="Groepen & Partijen"
                 title="Private Moments"
                 text="Onze bar is de perfecte plek voor een BRUTale borrel of een op maat gemaakt event. Van oesterproeverijen voor groepen tot exclusieve diners in het hart van de Pijp. Wij verzorgen uw event tot in de kleinste details."
-                imageSrc="https://images.unsplash.com/photo-1550966841-3ee7adac1af0?auto=format&fit=crop&q=80&w=1200"
+                imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-bar.jpg"
                 ctaText="Vraag een offerte aan"
                 reversed={true}
             />
@@ -93,7 +93,7 @@ export const Events: React.FC = () => {
             {/* Footer Visual */}
             <section className="h-[50vh] relative overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=2400"
+                    src="https://brutdemer.nl/wp-content/uploads/2022/03/verplicht-1.jpg"
                     className="w-full h-full object-cover"
                     alt="Atmosphere"
                 />
