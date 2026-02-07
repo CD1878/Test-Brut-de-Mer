@@ -13,9 +13,9 @@ const ContentSection: React.FC<{
     <div className="max-w-6xl mx-auto px-6">
       <div className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${reversed ? 'md:flex-row-reverse' : ''}`}>
         <div className="w-full md:w-1/2 aspect-[4/3] relative overflow-hidden">
-          <img 
-            src={imageSrc} 
-            alt={title} 
+          <img
+            src={imageSrc}
+            alt={title}
             className="object-cover w-full h-full grayscale-[10%] hover:grayscale-0 transition-all duration-700"
           />
         </div>
@@ -58,12 +58,12 @@ export const Home: React.FC = () => {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <div className="relative w-full h-[80vh] bg-gray-900">
-        <img 
-          src="https://picsum.photos/seed/brutdemerhero/1920/1080" 
-          alt="Brut de Mer Interior" 
-          className="w-full h-full object-cover opacity-70"
+        <img
+          src="/images/hero_interior.png"
+          alt="Brut de Mer Interior"
+          className="w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white space-y-8 px-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white space-y-8 px-4 bg-black/30">
           <h1 className="text-5xl md:text-7xl font-serif tracking-widest text-center">BRUT DE MER</h1>
           <p className="text-sm md:text-base uppercase tracking-[0.2em] font-light max-w-lg text-center leading-relaxed">
             Amsterdam's finest spot for oysters, fish & bubbles since 2016
@@ -84,22 +84,22 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Content Sections */}
-      <ContentSection 
-        imageSrc="https://picsum.photos/seed/oysters1/800/600"
+      <ContentSection
+        imageSrc="https://images.unsplash.com/photo-1599458252271-75480a67233c?auto=format&fit=crop&q=80&w=1200"
         title="Oysters"
         text="Wij serveren dagelijks diverse soorten oesters, vers van de afslag. Van de ziltige Zeeuwse Creuse tot de verfijnde Gillardeau. Onze oesters worden met zorg geopend en geserveerd met klassieke mignonette en citroen."
       />
 
-      <ContentSection 
-        imageSrc="https://picsum.photos/seed/wineglass/800/600"
+      <ContentSection
+        imageSrc="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=1200"
         title="Wine"
         text="Onze wijnkaart is een zorgvuldige selectie van Europese wijnhuizen. Met een focus op witte wijnen uit de Elzas, Bourgogne en Loire die perfect harmoniëren met onze gerechten. Vraag ons team naar de perfecte combinatie."
         reversed={true}
         grayBg={true}
       />
 
-      <ContentSection 
-        imageSrc="https://picsum.photos/seed/fishdish/800/600"
+      <ContentSection
+        imageSrc="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=1200"
         title="Fish"
         text="Naast onze Fruits de Mer plateaus serveren wij prachtige visgerechten. Dagvers, puur en zonder onnodige toevoegingen. De smaak van de vis staat altijd centraal in onze keuken."
       />
@@ -110,8 +110,8 @@ export const Home: React.FC = () => {
           <div className="aspect-video w-full bg-black relative">
             {/* Placeholder for iframe to mimic Youtube embed without external script heavy load */}
             <div className="w-full h-full flex items-center justify-center bg-gray-800 text-white flex-col">
-               <span className="text-2xl font-serif mb-4">BRUT DE MER</span>
-               <span className="uppercase tracking-widest text-xs border border-white px-4 py-2">Watch Video</span>
+              <span className="text-2xl font-serif mb-4">BRUT DE MER</span>
+              <span className="uppercase tracking-widest text-xs border border-white px-4 py-2">Watch Video</span>
             </div>
           </div>
         </div>
