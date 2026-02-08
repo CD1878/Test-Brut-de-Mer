@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-cream animate-fade-in">
       {/* Hero */}
@@ -12,7 +15,7 @@ export const About: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl md:text-7xl text-white font-serif tracking-[0.2em] uppercase drop-shadow-2xl">Over Ons</h1>
+            <h1 className="text-4xl md:text-7xl text-white font-serif tracking-[0.2em] uppercase drop-shadow-2xl">{t.about.heroTitle}</h1>
             <div className="w-16 h-px bg-white mx-auto mt-6 opacity-60"></div>
           </div>
         </div>
@@ -31,12 +34,12 @@ export const About: React.FC = () => {
             />
           </div>
           <div className="w-full md:w-1/2 space-y-8">
-            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">BRUT DE MER</h2>
+            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">{t.about.section1Title}</h2>
             <p className="font-serif text-gray-700 leading-relaxed text-lg italic">
-              Brut de Mer brengt de Cote d’ Azur naar het gezellige Gerard Douplein in Amsterdam. Wij zijn een dynamische Oester – Vis – Wijn – Bar waar altijd een heerlijke bruisende sfeer heerst.
+              {t.about.section1Text1}
             </p>
             <p className="font-serif text-gray-600 leading-loose text-base">
-              Kakelverse oesters die dagelijks en direct vanuit de Zeeuwse oester putten geleverd worden. Brut heeft een groot assortiment oesters uit diverse streken waarbij we rekening houden met de verschillende seizoenen en herkomst. De oesters worden op professionele wijze geopend door onze getrainde oestermannen. Zij kunnen u over iedere oester informeren en hierbij een passende wijn adviseren.
+              {t.about.section1Text2}
             </p>
           </div>
         </div>
@@ -51,12 +54,12 @@ export const About: React.FC = () => {
             />
           </div>
           <div className="w-full md:w-1/2 space-y-8">
-            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">WIE ZIJN WIJ</h2>
+            <h2 className="text-3xl font-serif text-marine-blue uppercase tracking-widest border-b border-marine-blue/20 pb-4 inline-block">{t.about.section2Title}</h2>
             <p className="font-serif text-gray-700 leading-relaxed text-lg italic">
-              In april 2015 opende Brut de Mer aan het Gerard Douplein in de Amsterdamse Pijp. Brut de Mer is van vijf vrienden, wij hebben allen ons eigen specialisme waardoor er een goede/sterke synergie ontstaat binnen Brut.
+              {t.about.section2Text1}
             </p>
             <p className="font-serif text-gray-600 leading-loose text-base">
-              Voor de een zijn we een oesterbar, voor de ander een visbar of restaurant. Iedereen beleeft Brut de Mer op zijn manier. Met de wijze hoe wij de klant bedienen, onze robuuste uitstraling en fantastische gerechten heeft Brut de Mer vis opnieuw op de kaart gezet. Wij zijn niet traditioneel en zeker niet stijf, met creatieve gerechten, met de beste ingrediënten en enthousiast personeel hebben we een bijzonder mooi en gezellig concept!
+              {t.about.section2Text2}
             </p>
           </div>
         </div>

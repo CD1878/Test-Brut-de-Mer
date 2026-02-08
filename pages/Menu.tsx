@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button } from '../components/Button';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Menu: React.FC = () => {
+  const { t } = useLanguage();
+
   const menuCategories = [
     { name: "Snacks", link: "https://brutdemer.nl/wp-content/uploads/2025/11/content___com.whatsapp.provider-4.pdf" },
     { name: "Diner", link: "https://brutdemer.nl/wp-content/uploads/2025/11/content___com.whatsapp.provider_1.pdf" },
@@ -16,11 +19,11 @@ export const Menu: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20 space-y-6 animate-fade-in">
           <h1 className="text-marine-blue font-serif text-5xl md:text-6xl tracking-[0.2em] uppercase">
-            Menu
+            {t.menu.heroTitle}
           </h1>
           <div className="w-16 h-px bg-marine-blue mx-auto opacity-40"></div>
           <p className="text-gray-600 font-serif italic text-lg">
-            Ontdek onze dagverse smaken en geselecteerde wijnen
+            {t.menu.subtitle}
           </p>
         </div>
 
@@ -40,7 +43,7 @@ export const Menu: React.FC = () => {
                   {cat.name}
                 </h3>
                 <div className="mt-4 text-xs uppercase tracking-widest opacity-0 group-hover:opacity-60 transition-opacity duration-500">
-                  Bekijk Menu
+                  {t.common.viewMenu}
                 </div>
               </div>
             </a>
@@ -50,7 +53,7 @@ export const Menu: React.FC = () => {
         {/* Decorative Quote */}
         <div className="mt-32 text-center max-w-2xl px-6 opacity-60">
           <p className="font-serif italic text-xl text-marine-blue">
-            "Savor the ocean's finest offerings, paired with the perfect bubbles."
+            {t.menu.quote}
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <span className="w-1 h-1 bg-marine-blue rounded-full"></span>
@@ -62,7 +65,7 @@ export const Menu: React.FC = () => {
         {/* Allergy Warning */}
         <div className="mt-24 py-8 border-t border-marine-blue/10 w-full text-center">
           <p className="font-serif text-sm text-gray-400 italic">
-            Heeft u een allergie? Laat het ons weten! Wij informeren u graag over onze ingrediënten.
+            {t.menu.allergyWarning}
           </p>
         </div>
 

@@ -7,9 +7,10 @@ const ContentSection: React.FC<{
   imageSrc: string;
   title: string;
   text: string;
+  buttonText: string;
   reversed?: boolean;
   grayBg?: boolean;
-}> = ({ imageSrc, title, text, reversed = false, grayBg = false }) => (
+}> = ({ imageSrc, title, text, buttonText, reversed = false, grayBg = false }) => (
   <section className={`w-full py-16 md:py-24 ${grayBg ? 'bg-soft-gray' : 'bg-cream'}`}>
     <div className="max-w-6xl mx-auto px-6">
       <div className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${reversed ? 'md:flex-row-reverse' : ''}`}>
@@ -28,7 +29,7 @@ const ContentSection: React.FC<{
           </p>
           <div className="pt-4">
             <NavLink to="/menu">
-              <Button variant="outline">Ontdek De Kaart</Button>
+              <Button variant="outline">{buttonText}</Button>
             </NavLink>
           </div>
         </div>
@@ -197,12 +198,14 @@ export const Home: React.FC = () => {
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-oesters.jpg"
         title={t.home.sections.oysters.title}
         text={t.home.sections.oysters.text}
+        buttonText={t.common.discoverMenu}
       />
 
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-vis.jpg"
         title={t.home.sections.fish.title}
         text={t.home.sections.fish.text}
+        buttonText={t.common.discoverMenu}
         reversed={true}
         grayBg={true}
       />
@@ -211,12 +214,14 @@ export const Home: React.FC = () => {
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-wijn.jpg"
         title={t.home.sections.wine.title}
         text={t.home.sections.wine.text}
+        buttonText={t.common.discoverMenu}
       />
 
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-bar.jpg"
         title={t.home.sections.bar.title}
         text={t.home.sections.bar.text}
+        buttonText={t.common.discoverMenu}
         reversed={true}
         grayBg={true}
       />
