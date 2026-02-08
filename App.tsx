@@ -38,7 +38,8 @@ const App: React.FC = () => {
           <Footer />
         </div>
       </HashRouter>
-      );
+    </LanguageProvider>
+  );
 };
 
-      export default App;
+export default App;
