@@ -16,37 +16,33 @@ export const Events: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setSubmitStatus('idle');
 
-        try {
-            const response = await fetch('https://formsubmit.co/info@chefdigital.nl', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    _subject: 'Test AG',
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    guests: formData.guests,
-                    message: formData.message,
-                    _template: 'table'
-                })
-            });
+        // Create email body
+        const emailBody = `
+Nieuwe Moederdag Reservering - Test AG
 
-            if (response.ok) {
-                setSubmitStatus('success');
-                setFormData({ name: '', email: '', phone: '', guests: '', message: '' });
-            } else {
-                setSubmitStatus('error');
-            }
-        } catch (error) {
-            setSubmitStatus('error');
-        } finally {
+Naam: ${formData.name}
+Email: ${formData.email}
+Telefoonnummer: ${formData.phone}
+Aantal personen: ${formData.guests}
+Opmerking: ${formData.message || 'Geen opmerking'}
+
+---
+Verzonden via Brut de Mer website
+        `.trim();
+
+        // Create mailto link
+        const mailtoLink = `mailto:info@chefdigital.nl?subject=Test AG&body=${encodeURIComponent(emailBody)}`;
+
+        // Open email client
+        window.location.href = mailtoLink;
+
+        // Show success message after a short delay
+        setTimeout(() => {
+            setSubmitStatus('success');
+            setFormData({ name: '', email: '', phone: '', guests: '', message: '' });
             setIsSubmitting(false);
-        }
+        }, 1000);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
