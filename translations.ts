@@ -123,9 +123,11 @@ export const translations = {
             message: 'Opmerking',
             submit: 'Verstuur aanvraag',
             sending: 'Verzenden...',
-            success: 'Bedankt! We nemen zo snel mogelijk contact met u op.',
+            success: 'Bedankt voor uw aanvraag!',
+            successSubtext: 'We nemen zo snel mogelijk contact met u op.',
             error: 'Er is iets misgegaan. Probeer het later opnieuw.',
-            required: 'Dit veld is verplicht'
+            required: 'Dit veld is verplicht',
+            newRequest: 'Nieuwe aanvraag indienen'
         }
     },
     ENG: {
@@ -250,9 +252,11 @@ export const translations = {
             message: 'Comments',
             submit: 'Submit Request',
             sending: 'Sending...',
-            success: 'Thank you! We will contact you as soon as possible.',
+            success: 'Thank you for your request!',
+            successSubtext: 'We will contact you as soon as possible.',
             error: 'Something went wrong. Please try again later.',
-            required: 'This field is required'
+            required: 'This field is required',
+            newRequest: 'Submit new request'
         }
     }
 };

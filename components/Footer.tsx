@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
       <div className="fixed bottom-0 right-0 z-50 p-6 md:p-8">
         <a
           href="#tebi-reservations"
-          className="bg-marine-blue text-white font-serif text-xs uppercase tracking-widest py-3 px-6 shadow-none hover:bg-white hover:text-marine-blue border border-white transition-colors duration-300"
+          className="bg-marine-blue text-white font-serif text-xs uppercase tracking-widest py-3 px-6 shadow-2xl hover:bg-white hover:text-marine-blue transition-colors duration-300"
         >
           {t.footer.reserve}
         </a>
