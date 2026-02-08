@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/Button';
 import { NavLink } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const ContentSection: React.FC<{
   imageSrc: string;
@@ -128,6 +129,8 @@ const ReviewSlider: React.FC = () => {
 };
 
 export const Home: React.FC = () => {
+  const { t } = useLanguage();
+
   const heroImages = [
     "https://brutdemer.nl/wp-content/uploads/2022/04/1920x610_nieuw_header_brut_de_mere.jpg",
     "https://brutdemer.nl/wp-content/uploads/2022/03/brut-de-mer-terras-over-ons-header.jpg",
@@ -159,16 +162,16 @@ export const Home: React.FC = () => {
         ))}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
           <h1 className="text-4xl md:text-[70px] font-serif tracking-[3px] uppercase leading-tight drop-shadow-sm mb-8 font-light">
-            BRUT DE MER
+            {t.home.heroTitle}
           </h1>
           <div className="max-w-2xl space-y-8">
             <p className="text-sm md:text-base font-serif leading-relaxed opacity-90 font-light">
-              Brut de Mer brengt de Cote d’ Azur naar het gezellige Gerard Douplein in Amsterdam. Wij zijn een dynamische Oester – Vis – Wijn – Bar waar altijd een heerlijke bruisende sfeer heerst. Kakelverse oesters die dagelijks en direct vanuit de Zeeuwse oester putten geleverd worden.
+              {t.home.heroDescription}
             </p>
             <div className="pt-8">
               <NavLink to="/over-ons">
                 <button className="bg-[#202F4F] text-white px-10 py-3 text-[12px] uppercase tracking-[0.3em] hover:bg-white hover:text-[#202F4F] transition-all duration-300 font-light shadow-xl">
-                  Lees Meer
+                  {t.home.readMore}
                 </button>
               </NavLink>
             </div>
@@ -183,37 +186,37 @@ export const Home: React.FC = () => {
 
       {/* Intro Text */}
       <div className="py-32 text-center max-w-4xl mx-auto px-6">
-        <h3 className="text-xs uppercase tracking-[0.6em] text-marine-blue/60 mb-10 font-sans font-bold">Puurheid & Passie</h3>
+        <h3 className="text-xs uppercase tracking-[0.6em] text-marine-blue/60 mb-10 font-sans font-bold">{t.home.introTitle}</h3>
         <p className="font-serif text-3xl md:text-5xl text-marine-blue italic leading-snug">
-          "Wij zijn een dynamische Oester – Vis – Wijn – Bar waar altijd een heerlijke bruisende sfeer heerst."
+          {t.home.introText}
         </p>
       </div>
 
       {/* Sections with Official Content */}
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-oesters.jpg"
-        title="Oesters"
-        text="Ga jij voor je favoriet of laat je je inspireren door onze oesterman? Met onze 6 verschillende oesters zit er altijd iets passends bij. Keuzestress? Niet nodig! Take it all met onze proeverij!"
+        title={t.home.sections.oysters.title}
+        text={t.home.sections.oysters.text}
       />
 
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-vis.jpg"
-        title="Vis"
-        text="Dagelijks serveren wij duurzame vis die rechtstreeks uit de zee gevangen wordt. Laat u verrassen en geniet van de vangst van de dag! Ga voor de Fruits de mer en ontdek op BRUTale wijze wat de zee te bieden heeft."
+        title={t.home.sections.fish.title}
+        text={t.home.sections.fish.text}
         reversed={true}
         grayBg={true}
       />
 
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-wijn.jpg"
-        title="Wijn"
-        text="Een avond zonder wijn is als oesters zonder parels. Maak uw avond af door te genieten van uw favoriete wijn of laat u adviseren door een van ons!"
+        title={t.home.sections.wine.title}
+        text={t.home.sections.wine.text}
       />
 
       <ContentSection
         imageSrc="https://brutdemer.nl/wp-content/uploads/2022/04/800x570-bar.jpg"
-        title="Bar"
-        text="Start de avond met een bubbel en eindig met een cocktail! Naast de wijn, champagne en cocktails serveren wij zowel non-alcoholisch als alcoholische alternatieven, waardoor iedereen een brute experience beleeft."
+        title={t.home.sections.bar.title}
+        text={t.home.sections.bar.text}
         reversed={true}
         grayBg={true}
       />
@@ -223,7 +226,7 @@ export const Home: React.FC = () => {
       {/* Image Gallery Slider */}
       <section className="py-24 bg-cream">
         <div className="text-center mb-16">
-          <h2 className="text-xs uppercase tracking-[0.6em] text-marine-blue/40 font-bold">Visual Moments</h2>
+          <h2 className="text-xs uppercase tracking-[0.6em] text-marine-blue/40 font-bold">{t.home.visualMoments}</h2>
         </div>
         <ImageCarousel />
       </section>
@@ -237,8 +240,8 @@ export const Home: React.FC = () => {
         />
         <div className="absolute inset-0 bg-marine-blue/20 flex items-center justify-center">
           <div className="text-center text-white border border-white/40 p-16 backdrop-blur-xl shadow-2xl">
-            <h2 className="text-5xl font-serif mb-6 italic drop-shadow-lg">Beleef de Zilte Smaak</h2>
-            <p className="uppercase tracking-[0.4em] text-sm font-light drop-shadow-md">Gerard Douplein 8H, Amsterdam</p>
+            <h2 className="text-5xl font-serif mb-6 italic drop-shadow-lg">{t.home.finalVisual.title}</h2>
+            <p className="uppercase tracking-[0.4em] text-sm font-light drop-shadow-md">{t.home.finalVisual.subtitle}</p>
           </div>
         </div>
       </section>

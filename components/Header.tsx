@@ -2,17 +2,39 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu as MenuIcon, X } from 'lucide-react';
 import { NavItem } from '../types';
-
-const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: '/' },
-  { label: 'Over Ons', path: '/over-ons' },
-  { label: 'Menu', path: '/menu' },
-  { label: 'Events', path: '/events' },
-  { label: 'Contact', path: '/contact' },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const NAV_ITEMS: NavItem[] = [
+    { label: t.header.home, path: '/' },
+    { label: t.header.about, path: '/over-ons' },
+    { label: t.header.menu, path: '/menu' },
+    { label: t.header.events, path: '/events' },
+    { label: t.header.contact, path: '/contact' },
+  ];
+
+  const LanguageSelector = ({ mobile = false }) => (
+    <div className={`flex items-center gap-2 ${mobile ? 'justify-center py-4 border-t border-gray-100 mt-4' : 'ml-6'}`}>
+      <button
+        onClick={() => setLanguage('NL')}
+        className={`flex items-center gap-1 transition-opacity ${language === 'NL' ? 'opacity-100 font-bold' : 'opacity-40 hover:opacity-100'}`}
+      >
+        <img src="https://flagcdn.com/w20/nl.png" alt="NL" className="w-5 h-auto shadow-sm" />
+        <span className="text-xs font-sans">NL</span>
+      </button>
+      <span className="text-gray-300">|</span>
+      <button
+        onClick={() => setLanguage('ENG')}
+        className={`flex items-center gap-1 transition-opacity ${language === 'ENG' ? 'opacity-100 font-bold' : 'opacity-40 hover:opacity-100'}`}
+      >
+        <img src="https://flagcdn.com/w20/gb.png" alt="ENG" className="w-5 h-auto shadow-sm" />
+        <span className="text-xs font-sans">ENG</span>
+      </button>
+    </div>
+  );
 
   return (
     <header className="w-full bg-white border-b border-black md:border-b-0 flex flex-col items-center pt-8 pb-0 relative z-50">
@@ -36,8 +58,9 @@ export const Header: React.FC = () => {
 
       {/* Desktop Navigation Bar */}
       <nav className="hidden md:block w-full">
-        <ul className="flex flex-row w-full max-w-full mx-auto">
-          {NAV_ITEMS.map((item, index) => (
+        <ul className="flex flex-row w-full max-w-full mx-auto items-center justify-center">
+          <div className="flex-1 flex justify-center border-l-0"></div> {/* Spacer */}
+          {NAV_ITEMS.map((item) => (
             <li
               key={item.path}
               className="flex-1 border-l border-black first:border-l-0 bg-[#fcfdfb] transition-colors duration-300"
@@ -53,14 +76,19 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
           ))}
-          <div className="border-l border-black"></div>
+          <div className="border-l border-black h-full"></div>
+
+          {/* Language Selector Desktop - integrated into grid or placed to side */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 pr-8 hidden lg:block">
+            <LanguageSelector />
+          </div>
         </ul>
       </nav>
 
       {/* Mobile Navigation Overlay */}
       <div className={`
         md:hidden absolute top-full left-0 w-full bg-white border-b border-black transition-all duration-300 ease-in-out origin-top overflow-hidden
-        ${isMobileMenuOpen ? 'max-h-[400px] opacity-100 shadow-xl' : 'max-h-0 opacity-0'}
+        ${isMobileMenuOpen ? 'max-h-[500px] opacity-100 shadow-xl' : 'max-h-0 opacity-0'}
       `}>
         <ul className="flex flex-col">
           {NAV_ITEMS.map((item) => (
@@ -77,6 +105,7 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
           ))}
+          <LanguageSelector mobile={true} />
         </ul>
       </div>
     </header>
