@@ -76,21 +76,10 @@ const ImageCarousel: React.FC = () => {
   );
 };
 
+
 const ReviewSlider: React.FC = () => {
-  const reviews = [
-    {
-      text: "Fantastisch eten en goede bediening. Speciaal teruggekomen voor de fantastische oesters, maar ook de bijgerechten zijn top. Bijzonder vriendelijke en snelle bediening.",
-      author: "Maarten"
-    },
-    {
-      text: "Subliem! Absoluut een van de beste visrestaurants waar ik ooit ben geweest! De oesters zijn geweldig, de king krab zoals je hem altijd al wilde eten en de pulpo zo mals...",
-      author: "Russell Ramirez"
-    },
-    {
-      text: "Heerlijk, gezellig en verrassend. Fruit de mer is heerlijk en veel verschillende oesters. De krab, makreel en picana zijn ook echte aanraders.",
-      author: "Roger"
-    }
-  ];
+  const { t } = useLanguage();
+  const reviews = t.home.reviews;
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -104,7 +93,7 @@ const ReviewSlider: React.FC = () => {
   return (
     <section className="bg-marine-blue text-white py-24 text-center px-6 overflow-hidden">
       <div className="max-w-3xl mx-auto space-y-8 relative">
-        <div className="text-6xl font-serif opacity-30">“</div>
+        <div className="text-6xl font-serif opacity-30">"</div>
         <div className="min-h-[160px] md:min-h-[120px] flex items-center justify-center">
           <p
             key={currentIndex}

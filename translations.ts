@@ -40,6 +40,20 @@ export const translations = {
                 }
             },
             visualMoments: 'Visual Moments',
+            reviews: [
+                {
+                    text: 'Fantastisch eten en goede bediening. Speciaal teruggekomen voor de fantastische oesters, maar ook de bijgerechten zijn top. Bijzonder vriendelijke en snelle bediening.',
+                    author: 'Maarten'
+                },
+                {
+                    text: 'Subliem! Absoluut een van de beste visrestaurants waar ik ooit ben geweest! De oesters zijn geweldig, de king krab zoals je hem altijd al wilde eten en de pulpo zo mals...',
+                    author: 'Russell Ramirez'
+                },
+                {
+                    text: 'Heerlijk, gezellig en verrassend. Fruit de mer is heerlijk en veel verschillende oesters. De krab, makreel en picana zijn ook echte aanraders.',
+                    author: 'Roger'
+                }
+            ],
             finalVisual: {
                 title: 'Beleef de Zilte Smaak',
                 subtitle: 'Gerard Douplein 8H, Amsterdam'
@@ -141,6 +155,20 @@ export const translations = {
                 }
             },
             visualMoments: 'Visual Moments',
+            reviews: [
+                {
+                    text: 'Fantastic food and great service. Came back especially for the fantastic oysters, but the side dishes are also top-notch. Exceptionally friendly and fast service.',
+                    author: 'Maarten'
+                },
+                {
+                    text: 'Sublime! Absolutely one of the best fish restaurants I have ever been to! The oysters are amazing, the king crab as you always wanted to eat it and the pulpo so tender...',
+                    author: 'Russell Ramirez'
+                },
+                {
+                    text: 'Delicious, cozy and surprising. Fruit de mer is delicious and many different oysters. The crab, mackerel and picana are also highly recommended.',
+                    author: 'Roger'
+                }
+            ],
             finalVisual: {
                 title: 'Experience the Salty Taste',
                 subtitle: 'Gerard Douplein 8H, Amsterdam'
