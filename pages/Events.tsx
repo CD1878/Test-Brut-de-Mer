@@ -16,33 +16,40 @@ export const Events: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        // Create email body
-        const emailBody = `
-Nieuwe Moederdag Reservering - Test AG
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: 'f8c7e3d2-4b1a-4f9e-8c2d-5a6b7c8d9e0f',
+                    subject: 'Test AG',
+                    from_name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    guests: formData.guests,
+                    message: formData.message,
+                    to: 'info@chefdigital.nl'
+                })
+            });
 
-Naam: ${formData.name}
-Email: ${formData.email}
-Telefoonnummer: ${formData.phone}
-Aantal personen: ${formData.guests}
-Opmerking: ${formData.message || 'Geen opmerking'}
+            const result = await response.json();
 
----
-Verzonden via Brut de Mer website
-        `.trim();
-
-        // Create mailto link
-        const mailtoLink = `mailto:info@chefdigital.nl?subject=Test AG&body=${encodeURIComponent(emailBody)}`;
-
-        // Open email client
-        window.location.href = mailtoLink;
-
-        // Show success message after a short delay
-        setTimeout(() => {
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', phone: '', guests: '', message: '' });
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', guests: '', message: '' });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
             setIsSubmitting(false);
-        }, 1000);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
