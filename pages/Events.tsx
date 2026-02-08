@@ -19,33 +19,35 @@ export const Events: React.FC = () => {
         setSubmitStatus('idle');
 
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const response = await fetch('https://formsubmit.co/ajax/info@chefdigital.nl', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: 'f8c7e3d2-4b1a-4f9e-8c2d-5a6b7c8d9e0f',
-                    subject: 'Test AG',
-                    from_name: formData.name,
+                    _subject: 'Test AG',
+                    _captcha: 'false', // Disable captcha to prevent issues
+                    _template: 'table', // Nice table format
+                    name: formData.name,
                     email: formData.email,
                     phone: formData.phone,
                     guests: formData.guests,
-                    message: formData.message,
-                    to: 'info@chefdigital.nl'
+                    message: formData.message
                 })
             });
 
             const result = await response.json();
 
-            if (result.success) {
+            if (response.ok) {
                 setSubmitStatus('success');
                 setFormData({ name: '', email: '', phone: '', guests: '', message: '' });
             } else {
+                console.error('Form submission failed:', result);
                 setSubmitStatus('error');
             }
         } catch (error) {
+            console.error('Form submission error:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
