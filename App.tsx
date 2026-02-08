@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
 import { About } from './pages/About';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
     <HashRouter>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-cream font-sans text-gray-900">
+        <LanguageSwitcher />
         <Header />
         <main className="flex-grow">
           <Routes>
