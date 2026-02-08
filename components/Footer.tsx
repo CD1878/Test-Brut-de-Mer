@@ -1,14 +1,17 @@
 import React from 'react';
 import { Instagram, Facebook, Award } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-marine-blue text-white pt-16 pb-12 mt-auto relative">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
         {/* Contact Column */}
         <div className="flex flex-col items-center md:items-start space-y-4">
-          <h3 className="font-serif text-lg tracking-widest uppercase mb-2">Contact</h3>
+          <h3 className="font-serif text-lg tracking-widest uppercase mb-2">{t.footer.contact}</h3>
           <div className="font-sans text-sm font-light leading-relaxed text-gray-300">
             <p>Brut de Mer</p>
             <p>Gerard Douplein 8H</p>
@@ -30,18 +33,18 @@ export const Footer: React.FC = () => {
 
         {/* Opening Hours Column */}
         <div className="flex flex-col items-center md:items-start space-y-4">
-          <h3 className="font-serif text-lg tracking-widest uppercase mb-2">Openingstijden</h3>
+          <h3 className="font-serif text-lg tracking-widest uppercase mb-2">{t.footer.openingHours}</h3>
           <div className="font-sans text-sm font-light leading-relaxed text-gray-300 space-y-1">
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Maandag:</span> <span>16:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Dinsdag:</span> <span>16:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Woensdag:</span> <span>16:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Donderdag:</span> <span>16:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Vrijdag:</span> <span>12:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Zaterdag:</span> <span>12:00 – 00:00</span></div>
-            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>Zondag:</span> <span>12:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.mon}:</span> <span>16:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.tue}:</span> <span>16:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.wed}:</span> <span>16:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.thu}:</span> <span>16:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.fri}:</span> <span>12:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.sat}:</span> <span>12:00 – 00:00</span></div>
+            <div className="flex justify-between w-48 md:w-56 border-b border-gray-800 pb-1"><span>{t.footer.days.sun}:</span> <span>12:00 – 00:00</span></div>
           </div>
           <p className="text-xs text-gray-400 italic mt-4">
-            Onze keuken sluit iedere dag om 22:00
+            {t.footer.kitchenClose}
           </p>
         </div>
 
@@ -49,7 +52,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start space-y-6">
           <h3 className="font-serif text-lg tracking-widest uppercase mb-2">Instagram</h3>
           <p className="font-sans text-sm font-light text-gray-300">
-            Deel uw momenten met #brutdemer en beleef de sfeer van de Cote d'Azur in de Pijp.
+            {t.footer.instagramText}
           </p>
           <a href="https://www.instagram.com/brut_de_mer/" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors">
             @BRUT_DE_MER
@@ -63,7 +66,7 @@ export const Footer: React.FC = () => {
           href="#tebi-reservations"
           className="bg-marine-blue text-white font-serif text-xs uppercase tracking-widest py-3 px-6 shadow-none hover:bg-white hover:text-marine-blue border border-white transition-colors duration-300"
         >
-          Reserveren
+          {t.footer.reserve}
         </a>
       </div>
 
