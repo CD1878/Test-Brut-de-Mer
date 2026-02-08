@@ -106,87 +106,103 @@ export const Events: React.FC = () => {
                         <div className="bg-white p-8 shadow-lg border border-gray-100">
                             <h3 className="text-2xl font-serif text-marine-blue mb-6 text-center">{t.events.mothersDay.cta}</h3>
 
-                            {submitStatus === 'success' && (
-                                <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 text-sm rounded">
-                                    {t.form.success}
+                            {submitStatus === 'success' ? (
+                                <div className="py-12 text-center space-y-6">
+                                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                                        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h4 className="text-xl font-serif text-marine-blue">{t.form.success}</h4>
+                                        <p className="text-sm text-gray-600">{t.form.successSubtext}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => setSubmitStatus('idle')}
+                                        className="text-sm text-marine-blue hover:underline mt-4"
+                                    >
+                                        {t.form.newRequest}
+                                    </button>
                                 </div>
+                            ) : (
+                                <>
+                                    {submitStatus === 'error' && (
+                                        <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 text-sm rounded">
+                                            {t.form.error}
+                                        </div>
+                                    )}
+
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.name} *</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.email} *</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.phone} *</label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.guests} *</label>
+                                            <input
+                                                type="number"
+                                                name="guests"
+                                                value={formData.guests}
+                                                onChange={handleChange}
+                                                required
+                                                min="1"
+                                                className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.message}</label>
+                                            <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                rows={4}
+                                                className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors resize-none"
+                                            ></textarea>
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full bg-marine-blue text-white py-4 px-6 text-sm uppercase tracking-widest hover:bg-white hover:text-marine-blue border border-marine-blue transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        >
+                                            {isSubmitting ? t.form.sending : t.form.submit}
+                                        </button>
+                                    </form>
+                                </>
                             )}
-
-                            {submitStatus === 'error' && (
-                                <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 text-sm rounded">
-                                    {t.form.error}
-                                </div>
-                            )}
-
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div>
-                                    <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.name} *</label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.email} *</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.phone} *</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.guests} *</label>
-                                    <input
-                                        type="number"
-                                        name="guests"
-                                        value={formData.guests}
-                                        onChange={handleChange}
-                                        required
-                                        min="1"
-                                        className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-sans text-gray-700 mb-2">{t.form.message}</label>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        rows={4}
-                                        className="w-full px-4 py-3 border border-gray-300 focus:border-marine-blue focus:outline-none transition-colors resize-none"
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-marine-blue text-white py-4 px-6 text-sm uppercase tracking-widest hover:bg-white hover:text-marine-blue border border-marine-blue transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    {isSubmitting ? t.form.sending : t.form.submit}
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </div>
