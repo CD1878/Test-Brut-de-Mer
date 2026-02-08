@@ -233,7 +233,7 @@ export const Home: React.FC = () => {
           alt="Atmosphere"
         />
         <div className="absolute inset-0 bg-marine-blue/20 flex items-center justify-center">
-          <div className="text-center text-white border border-white/40 p-16 backdrop-blur-xl shadow-2xl">
+          <div className="text-center text-white border border-white/40 p-16 shadow-2xl">
             <h2 className="text-5xl font-serif mb-6 italic drop-shadow-lg">{t.home.finalVisual.title}</h2>
             <p className="uppercase tracking-[0.4em] text-sm font-light drop-shadow-md">{t.home.finalVisual.subtitle}</p>
           </div>

@@ -114,6 +114,18 @@ export const translations = {
         contact: {
             heroTitle: 'Contact',
             openingHours: 'Openingstijden'
+        },
+        form: {
+            name: 'Naam',
+            email: 'Email',
+            phone: 'Telefoonnummer',
+            guests: 'Aantal personen',
+            message: 'Opmerking',
+            submit: 'Verstuur aanvraag',
+            sending: 'Verzenden...',
+            success: 'Bedankt! We nemen zo snel mogelijk contact met u op.',
+            error: 'Er is iets misgegaan. Probeer het later opnieuw.',
+            required: 'Dit veld is verplicht'
         }
     },
     ENG: {
@@ -229,6 +241,18 @@ export const translations = {
         contact: {
             heroTitle: 'Contact',
             openingHours: 'Opening Hours'
+        },
+        form: {
+            name: 'Name',
+            email: 'Email',
+            phone: 'Phone Number',
+            guests: 'Number of Guests',
+            message: 'Comments',
+            submit: 'Submit Request',
+            sending: 'Sending...',
+            success: 'Thank you! We will contact you as soon as possible.',
+            error: 'Something went wrong. Please try again later.',
+            required: 'This field is required'
         }
     }
 };
